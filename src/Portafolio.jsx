@@ -1,18 +1,48 @@
-import React from 'react';
+import React, { useState , useEffect } from 'react';
 import './portafolio.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { faLocationDot, faGraduationCap, faMoon, faSun, faPhone, faDatabase, faEnvelope, faBars } from '@fortawesome/free-solid-svg-icons'; 
-import { faLinkedin, faGithub, faReact, faJsSquare, faVuejs, faGitSquare, faNodeJs, faCss3, faHtml5, faWordpress, faFigma, faCodepen } from '@fortawesome/free-brands-svg-icons'; 
+import { faLinkedin, faGithub, faReact, faJsSquare, faVuejs, faGitSquare, faNodeJs, faCss3, faHtml5, faWordpress, faFigma, faCodepen, faAngular, faJava, faRust, faShopify } from '@fortawesome/free-brands-svg-icons'; 
 import yoImage from './assets/yo.png';
 import { faCode } from '@fortawesome/free-solid-svg-icons/faCode';
 import yoImage2 from "./assets/yo2.png";
 import Proyects from './Proyects.jsx'; 
 import DescargarCV from './DescargasCV.jsx';
+import Music from './Audio.jsx';
+import imgyo from './assets/imp.png'
+import { motion } from "framer-motion";
 
 const Portafolio = ({ theme, setTheme }) => {
+  
   const toggle_mode = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
+  useEffect(() => {
+    const cards = document.querySelectorAll('.card');
+
+    const handleScroll = () => {
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        // Si la tarjeta está visible en pantalla (ajusta el margen si quieres)
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          card.classList.add('zoom-in');
+          card.classList.remove('zoom-out');
+        } else {
+          card.classList.add('zoom-out');
+          card.classList.remove('zoom-in');
+        }
+      });
+    };
+
+    // Ejecutamos una vez para inicializar
+    handleScroll();
+
+    // Escuchamos el scroll
+    window.addEventListener('scroll', handleScroll);
+
+    // Limpieza al desmontar
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className={theme}>
@@ -22,6 +52,7 @@ const Portafolio = ({ theme, setTheme }) => {
           <input type="checkbox" id="menu" />
           <label htmlFor="menu" className="menu-labe">
   <FontAwesomeIcon icon={faBars} />
+
 </label>
           <nav className="navbar">
             <ul>
@@ -58,7 +89,6 @@ const Portafolio = ({ theme, setTheme }) => {
   </div>
 </section>
 
-            {/* redes sociales */}
             <section className="social-media">
               <div className="container">
                 <div className="social-icons">
@@ -79,23 +109,13 @@ const Portafolio = ({ theme, setTheme }) => {
             <img src={theme === 'light' ? yoImage : yoImage2} alt="yo" />
           </div>
         </div>
+    
+       <Music/>
+
+
       </header>
 
       <main>
-      
-      <section id="about-me" className="about-me">
-          <div className="about-me-box">
-            <h1>Acerca <span> de mi</span></h1> 
-            
-            <p> 
-            Me apasiona la tecnología y el desarrollo web, con un enfoque en la creación de experiencias digitales intuitivas y atractivas. 
-            <br/>
-            <br/>Disfruto aprendiendo nuevas herramientas y perfeccionando mis habilidades en React.js, JavaScript, HTML, CSS y Git. Me motiva la resolución de problemas y la innovación, combinando creatividad con funcionalidad para desarrollar soluciones web eficientes.
-            <br/>
-            <br/>Comprometido con el aprendizaje continuo, estoy en constante evolución para adaptarme a las tendencias tecnológicas y aportar valor en cada proyecto que desarrollo.
-               </p>
-          </div>
-        </section>
 
 
 
@@ -111,6 +131,10 @@ const Portafolio = ({ theme, setTheme }) => {
               <div className="card"><FontAwesomeIcon icon={faCss3} className="icono" /><h3>CSS</h3></div>
               <div className="card"><FontAwesomeIcon icon={faGitSquare}  className="icono"/><h3>GIT</h3></div>
               <div className="card"><FontAwesomeIcon icon={faGithub}  className="icono"/><h3>Github</h3></div>
+              <div className="card"><FontAwesomeIcon icon={faAngular} className="icono" /><h3>Angular</h3></div>
+              <div className="card"><FontAwesomeIcon icon={faJava} className="icono" /><h3>Java</h3></div>
+              <div className="card"><FontAwesomeIcon icon={faRust} className="icono" /><h3>Rust</h3></div>
+              <div className="card"><FontAwesomeIcon icon={faShopify} className="icono" /><h3>Shopify</h3></div>
 
               <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono" /><h3>HTML</h3></div>
               <div className="card"><FontAwesomeIcon icon={faDatabase}  className="icono"/><h3>NoSQL</h3></div>
@@ -124,15 +148,51 @@ const Portafolio = ({ theme, setTheme }) => {
           </div>
         </section>
 
-        <Proyects /> {/* Aquí se inserta el componente Proyects */}
+      
+ 
+
+        <Proyects /> 
         
-     
+       <section id="about-me" className="about-me">
+  <div className="about-me-box">
+    <motion.h1
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
+      Acerca <span>de mi</span>
+    </motion.h1>
+
+    <motion.img
+      src={imgyo}
+      alt="laptop"
+      className="imglap"
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.7 }}
+    />
+
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.4 }}
+    >
+      Me apasiona la tecnología y el desarrollo web, con un enfoque en la creación de experiencias digitales intuitivas y atractivas.<br />
+      Disfruto aprendiendo nuevas herramientas y perfeccionando mis habilidades en React.js, JavaScript, HTML, CSS y Git.<br />
+      Me motiva la resolución de problemas y la innovación, combinando creatividad con funcionalidad para desarrollar soluciones web eficientes.<br />
+      Comprometido con el aprendizaje continuo, estoy en constante evolución para adaptarme a las tendencias tecnológicas y aportar valor en cada proyecto que desarrollo.
+    </motion.p>
+
+  </div>
+</section>
 
 
         <section id="contact" className="contact">
+
   <div className="container">
-    <h1 className="titulo-contact">Contáctame</h1>
+               <hr />
     <p className="contact-mensaje">Siéntete libre de contactarme a través de cualquiera de estos canales:</p>
+
     <div className="contact-details">
       <div className="contact-item">
         <FontAwesomeIcon icon={faPhone} />
@@ -156,21 +216,36 @@ const Portafolio = ({ theme, setTheme }) => {
 
       </main>
 
-     <footer>
+   <footer className="footer">
   <div className="footer-content">
-    <ul>
-      <li><a href="#tecnologies">Tecnologías</a></li>
-      <li><a href="#contact">Contacto</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-    </ul>
-    <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" className="footer-link">
-      https://www.linkedin.com/feed/
-    </a>
+    <nav className="footer-nav">
+      <ul>
+        <li><a href="#tecnologies">Tecnologías</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+      </ul>
+    </nav>
+
+    <div className="footer-social">
+      <a
+        href="https://www.linkedin.com/in/cameron-bustamante-a03329265"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="footer-link"
+      >
+        <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+        
+      </a>
+        <p className="footer-copy">&copy; {new Date().getFullYear()} Cameron Bustamante. Todos los derechos reservados.</p>
+
+    </div>
   </div>
 </footer>
 
     </div>
   );
-};
+
+
+    };
 
 export default Portafolio;

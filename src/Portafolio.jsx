@@ -122,7 +122,7 @@ const Portafolio = ({ theme, setTheme }) => {
 
         <section id="tecnologies" className="tecnologies">
           <div className="container">
-            <h1 className="tec-titulo">Tecnologías </h1>
+            <h1 className="tec-titulo">Tecnologías que manejo</h1>
             <div className="cards">
               {/* Sección de tecnologías */}
               <div className="card"><FontAwesomeIcon icon={faReact}  className="icono"/><h3>React</h3></div>

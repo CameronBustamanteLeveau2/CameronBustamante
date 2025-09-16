@@ -89,7 +89,7 @@ img {
     display: none;
 }
 .header-content {  
-
+padding: 30px;
     display: flex;
 
 }
@@ -408,33 +408,13 @@ transition: transform 0.3s ease;
 
 
 
-.tec-titulo{
-    text-transform: uppercase; 
-    font-family: "Dongle", sans-serif;
-    font-size: 4.5em;
-    font-weight: 700;
-    font-style: normal;
-    color: #773907;
-    margin: 10px 0 35px 0; 
 
-}
 .projects {
     
     margin: 60px;
     text-align: center;
 }
 
-.proyect-tittle{
-
-  font-family: "Sniglet", system-ui;
-  font-optical-sizing: auto;
-
-  font-style: normal;    font-size: 4.5em;
-    font-weight: 300;
-    font-style: normal;
-    margin-top: 150px;
-    color: #773907;
-}
 
 .project-carousel {
     position:relative;
@@ -476,10 +456,10 @@ transition: transform 0.3s ease;
     background-color: #f4f4f4;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 0 15px; 
+    margin: 15px 15px; 
     flex: 0 0 30%; 
     box-sizing: border-box;
-    height: 400px;
+    height: 450px;
 }
 .project-card:hover{
     transform: translateY(-5px); 
@@ -547,7 +527,11 @@ transition: transform 0.3s ease;
 .tec-title{
     text-align: center;
 }
-
+.project-title{
+    font-size: 2.3em;
+    
+padding: 20px;
+}
 .containerp h2{
     text-align: center;
 }
@@ -604,31 +588,7 @@ transition: transform 0.3s ease;
    
 }
 
-.dark .contact-item:hover {
-    color: #786d87;
 
-   .info{
-    color: #786d87;
-
-   }
-}
-.dark .info{
-    color: #503459;
-}
-.dark .footer-content{
-    background-color: #a189a9;
-
-}
-.dark .project-title{
-    color: #503459;
-}
-.dark .proyect-description{
-    color: #503459;
-}
-.dark .contact-mensaje { 
-    color: #926f9e;
-    
-}
 .music-button {
   position: fixed;
   bottom: 20px;
@@ -674,20 +634,6 @@ margin: 15px;
   }
 }
 
-.dark .footer-link {
-color:rgb(87, 59, 112);
-}
-.dark .footer-link:hover {
-    color:rgb(216, 204, 227);
-    }
-.dark .footer-content li a{
-color:rgb(87, 59, 112);
-
-}
-.dark .footer-content li a:hover{
-    color:rgb(216, 204, 227);
-    
-    }
 
 
     @media (max-width: 1024px) {
@@ -1007,4 +953,50 @@ color:rgb(87, 59, 112);
   margin-top: 20px;
   font-size: 0.85rem;
   opacity: 0.7;
+}
+
+.tag{
+
+  background-color: #ccf4fa;
+}
+.project-tags{
+    margin-bottom: 30px;
+
+}
+
+.project-link{
+  border:   #fed3a4 solid 2px;
+  background-color: #f5d4b1;
+  border-radius: 30px;
+  box-shadow: #000000;
+padding: 10px;
+margin-top: 30px;
+  color: #ffffff;
+}
+.contact-item p, a{
+  text-decoration: underline;
+  margin: 20px;
+    font-size: 1.2rem;
+    color: #63390c;
+}
+.footer-social {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  gap: 10px;               /* espacio entre los ítems */
+  margin:50px;
+}
+
+.footer-link {
+  color: #f1c290;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #fff;
 }

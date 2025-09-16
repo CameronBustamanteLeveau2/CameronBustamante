@@ -17,6 +17,7 @@ import DescargarCV from './DescargasCV.jsx';
 import Music from './Audio.jsx';
 import imgyo from './assets/imp.png';
 import { motion } from "framer-motion";
+import { faMailReply } from '@fortawesome/free-solid-svg-icons/faMailReply';
 
 const Portafolio = ({ theme, setTheme }) => {
   
@@ -239,7 +240,7 @@ const Portafolio = ({ theme, setTheme }) => {
         </div>
         <div className="contact-item">
           <FontAwesomeIcon icon={faEnvelope} />
-          <a href="mailto:cameronbustamante2@gmail.com">cameronbustamante2@gmail.com</a>
+          <a href="mailto:cameronbustamante2@gmail.com">click here to gmail </a>
         </div>
       </motion.div>
 
@@ -269,6 +270,23 @@ const Portafolio = ({ theme, setTheme }) => {
               className="footer-link"
             >
               <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+            </a>
+              <a
+              href="https://github.com/CameronBustamanteLeveau2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              <FontAwesomeIcon icon={faGithub} /> GitHub
+
+            </a>
+              <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              <FontAwesomeIcon icon={faMailReply} /> Gmail
             </a>
           </div>
 

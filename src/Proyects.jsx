@@ -22,70 +22,70 @@ const Proyects = () => {
       description: "A web app designed to deliver a smooth and intuitive online grocery shopping experience.",
       image: Proyectope,
       link: "https://cameronbustamanteleveau2.github.io/Mercadona/",
-      tags: ["#Web", "#E-commerce"]
+      tags: [" #Web", " #E-commerce"]
     },
     {
       title: "Coffee Spring 🍁",
       description: "Landing page for a charming spring-themed coffee shop with modern UI design.",
       image: Proyectope3,
       link: "https://cameronbustamanteleveau2.github.io/CoffeSite/",
-      tags: ["#Web", "#LandingPage"]
+      tags: [" #Web", " #LandingPage"]
     },
     {
       title: "Sushi Bar 🍣",
       description: "Japanese restaurant website showcasing sushi and traditional dishes.",
       image: Proyectope2,
       link: "https://cameronbustamanteleveau2.github.io/SushiBar/",
-      tags: ["#Web", "#Food"]
+      tags: [" #Web", " #Food"]
     },
     {
       title: "Recipedia 🥙",
       description: "A platform for efficient recipe and menu management with easy navigation.",
       image: Proyectope4,
       link: "#",
-      tags: ["#Web", "#FoodTech"]
+      tags: [" #Web ", " #FoodTech"]
     },
     {
       title: "D´Calida Accommodation 🏬",
       description: "A website offering a comfortable accommodation booking experience.",
       image: Proyectope6,
       link: "https://dcalida.vercel.app",
-      tags: ["#Web", "#Booking"]
+      tags: [" #Web", " #Booking"]
     },
     {
       title: "Warmi Oven 🍪",
       description: "An e-commerce platform for selling homemade cookies and cakes.",
       image: Proyectope5,
       link: "https://warmi-oven.vercel.app",
-      tags: ["#Web", "#E-commerce"]
+      tags: ["#Web ", " #E-commerce"]
     },
     {
       title: "Dana Boutique 🌼",
       description: "Fashion boutique platform currently in development.",
       image: Proyectope7,
       link: "#",
-      tags: ["#Web", "#Fashion"]
+      tags: ["#Web ", " #Fashion"]
     },
     {
       title: "Fix Now 🔧",
       description: "UX concept for an app that connects users with local technicians for quick fixes.",
       image: Proyectope9,
       link: "#",
-      tags: ["#UX", "#Service"]
+      tags: ["#UX ", " #Service"]
     },
     {
       title: "FinEdu 📚",
       description: "Educational finance platform designed to promote financial literacy.",
       image: Proyectope8,
       link: "#",
-      tags: ["#Web", "#Education"]
+      tags: ["#Web ", " #Education"]
     },
      {
       title: "Jobsy ",
       description: "UX concept for an app that connects users with local technicians for quick fixes.",
       image: Proyectope10,
       link: "#",
-      tags: ["#UX", "#Service"]
+      tags: ["#UX ", " #Service"]
     }
   ];
 
@@ -121,7 +121,7 @@ const Proyects = () => {
                   ))}
                 </div>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                  View Project
+                 View Project
                 </a>
               </div>
             ))}

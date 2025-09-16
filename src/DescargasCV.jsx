@@ -5,7 +5,7 @@ export const DescargarCV = () => {
   return (
     <div>
       <a href={curriculum} download>
-        <button className="cv-button">Descargar CV</button>
+        <button className="cv-button">DOWNNLOAD CV</button>
       </a>
     </div>
   );

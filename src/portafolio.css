@@ -25,6 +25,8 @@ img {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+      margin-bottom: 50px;
+
 }
 .header {
     
@@ -237,6 +239,7 @@ text-shadow: 0px 6px 2px  #c5afa798;
 .about-me-box {
   text-align: center;
   padding: 50px;
+  margin-bottom: 50px;
 }
 
 .about-me h1 {
@@ -324,53 +327,83 @@ align-items: flex-end;
 }
 
 .cards {
-    display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly; 
     gap: 30px; 
     padding: 30px 0;
+    margin-right: 30px;
+      display: flex;
+  gap: 40px;
+}
+
+.carousel {
+  max-width: 1100px; /* Limita el ancho máximo del carrusel */
+  margin: 0 auto;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 50px ;
+
+}
+
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px; /* separa las tarjetas */
+  animation: scroll-left 20s linear infinite;
 }
 
 .card {
-
-    padding: 30px; 
-    border-radius: 15px; 
-    background-color: #fff;
-    width: 250px; 
-    height: 170px; 
-    text-align: center;
-    box-shadow: 4px 7px 14px rgba(73, 47, 1, 0.909); 
-transition: transform 0.3s ease;
-    animation: zoomIn 0.8s ease-in;
-
-  transform: scale(0.8);
-      margin: 0 auto; 
-      margin-bottom: 20px;
+  flex: 0 0 auto;
+  width: 220px;
+  height: 160px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 4px 7px 14px rgba(73, 47, 1, 0.909);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
- }
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.25);
+  animation: cambiarColor 5s infinite alternate;
+}
+
 .icono {
-    font-size: 60px;
-    color: #906232;
-    margin-bottom: 20px;
-    animation: cambiarColor 3s infinite alternate;
+  font-size: 60px;
+  color: #906232;
+  margin-bottom: 15px;
+  animation: cambiarColor 5s infinite alternate;
 }
 
-@keyframes cambiarColor {
-    0% {
-        color: #906232;
-    }
-    100% {
-            color: #f1c290;
-
-    }
+/* 🎞️ Animación del carrusel */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+/* 🖱️ Pausar animación al pasar el mouse */
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .carousel-track {
+    animation-duration: 60s; /* más lento en móvil */
+  }
+}
+
+
+
+
+@keyframes cambiarColor { 0% { color: #906232; } 100% { color: #f1c290; } }
 
 
 .card h3 {
@@ -382,6 +415,7 @@ transition: transform 0.3s ease;
 
 .card.zoom-in {
   animation: zoomIn 0.5s forwards;
+  margin: 30px
 }
 
 .card.zoom-out {
@@ -426,24 +460,36 @@ transition: transform 0.3s ease;
 
 .project-cards {
     display: flex;
-    
+  
     transition: transform 0.5s ease-in-out;
 }
 .cards {
-  display: flex;
-  flex-wrap: wrap;         /* Para que salten de línea si no entran */
-  justify-content: center; /* Centra horizontalmente */
-  gap: 1.5rem;             /* Espaciado entre tarjetas */
-  width: 600px;            /* El ancho que quieres */
-  margin: 0 auto;          /* Centrar el bloque en la página */
-  align-items: center;     /* Centra los ítems en el eje vertical */
+  display: flex;              /* Coloca los elementos en una fila */
+  flex-wrap: nowrap;          /* Evita que se vayan a otra línea */
+  justify-content: center;    /* Centra las tarjetas horizontalmente */
+  align-items: center;        /* Alinea verticalmente */
+  gap: 20px;                  /* Espacio entre las tarjetas */
+  margin: 0 auto;             /* Centra el contenedor en la página */
+  padding: 20px;              /* Espaciado interno */
 }
+
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+   animation: slide-left 2s linear infinite;
+     will-change: transform, opacity;
+
+
 }
+@media (max-width: 768px) {
+  .cards {
+    flex-wrap: wrap;      /* Permite que salten a la siguiente línea */
+    justify-content: center;
+  }
+}
+
 .technologies h2{
     text-align: left;
     margin-left: 200px;
@@ -696,6 +742,7 @@ margin: 15px;
         
         .card {
           width: 90%;
+
         }
       }
       
@@ -999,4 +1046,129 @@ margin-top: 30px;
 
 .footer-link:hover {
   color: #fff;
+}
+
+
+@keyframes slide-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-60%); }
+}
+
+@keyframes slide-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(60%); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =======================
+   CERTIFICATES FLIP CARD EFFECT
+======================= */
+
+/* Contenedor de la sección (mantener) */
+#certificates {
+    padding: 100px 0;
+    text-align: center;
+  }
+#certificates h1 {
+    font-size: 2.5rem;
+    color: #773907;
+    margin-bottom: 50px;
+}
+.certificates-grid {
+    display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.certificate-item {
+    background-color: transparent; /* El color de fondo lo darán las caras */
+    height: 300px; /* Altura fija para el ejemplo */
+    border-radius: 15px;
+    cursor: pointer;
+        width: 350px; /* Altura fija para el ejemplo */
+
+    perspective: 1000px; /* Necesario para la ilusión 3D */
+    overflow: visible; /* Permitir que la sombra se vea */
+}
+
+/* 🔄 El elemento que rota (contiene ambas caras) */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; /* Duración de la animación de volteo */
+    transform-style: preserve-3d; /* Hace que los hijos se posicionen en el espacio 3D */
+    border-radius: 15px;
+}
+
+.certificate-item:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; 
+    border-radius: 15px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.flip-card-front {
+    background-color: #ffffff;
+     
+    
+}
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    margin: 20px;
+    display: block;
+}
+
+/* 📑 Cara Trasera (Título) */
+.flip-card-back {
+    background-color: #f1c290; /* Un color del tema para la parte trasera */
+    color: white;
+    transform: rotateY(180deg); /* La oculta inicialmente */
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flip-card-back h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4d3317; /* Color oscuro para contraste */
+    padding: 0 15px;
+    text-align: center;
+}
+
+.flip-card-back p {
+    font-size: 1rem;
+    color: #6c5234;
 }

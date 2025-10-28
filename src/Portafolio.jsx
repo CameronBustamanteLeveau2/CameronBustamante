@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import './portafolio.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
@@ -18,7 +19,24 @@ import Music from './Audio.jsx';
 import imgyo from './assets/imp.png';
 import { motion } from "framer-motion";
 import { faMailReply } from '@fortawesome/free-solid-svg-icons/faMailReply';
+// Data for certificates
+const certificatesData = [
+  { id: 1, title: "HTML, CSS, JS", imgSrc: "/src/assets/c1.png", alt: "React Basics Certificate" },
+  { id: 2, title: "DATA Science ETHICS", imgSrc: "/src/assets/c2.png", alt: "FullStack Certificate" },
+  { id: 3, title: "Cybersecurity for Everyones", imgSrc: "/src/assets/c3.png", alt: "JavaScript Certificate" },
+  { id: 4, title: "Python for Everybody", imgSrc: "/src/assets/c4.png", alt: "RWD Certificate" },
+  { id: 5, title: "Supply Chain Analytics Essentials", imgSrc: "/src/assets/c5.png", alt: "Figma Certificate" },
+  { id: 5, title: "Python to Access Web Data", imgSrc: "/src/assets/c8.png", alt: "Figma Certificate" },
+  { id: 6, title: "Data Science Ethics", imgSrc: "/src/assets/c6.png", alt: "Figma Certificate" },
+  { id: 7, title: "Python Data Structures", imgSrc: "/src/assets/c7.png", alt: "Figma Certificate" },
 
+];
+
+// Framer Motion Variants for the grid items
+const certificateVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+};
 const Portafolio = ({ theme, setTheme }) => {
   
   const toggle_mode = () => {
@@ -128,7 +146,8 @@ const Portafolio = ({ theme, setTheme }) => {
       </header>
 
       <main>
-        {/* About Me */}
+        
+      {/* About Me */}
         <section id="about-me" className="about-me">
           <div className="about-me-box">
             <motion.h1
@@ -160,53 +179,100 @@ const Portafolio = ({ theme, setTheme }) => {
             </motion.p>
           </div>
         </section>
-        <Proyects /> 
+      
+          <Proyects /> 
 
-        {/* Technologies */}
-        <section id="technologies" className="technologies">
-          <div className="container">
-            <h1 className="tec-title">Knowledge and Skills</h1>
-
-            {/* Frontend */}
-            <h2 className="titulo">Frontend</h2>
-            <div className="cards">
-              <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faReact} className="icono"/><h3>React</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faVuejs} className="icono"/><h3>Vue</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faAngular} className="icono"/><h3>Angular</h3></div>
-            </div>
-
-            {/* Backend */}
-            <h2  className="titulo">Backend</h2>
-            <div className="cards">
-              <div className="card"><FontAwesomeIcon icon={faNodeJs} className="icono"/><h3>Node.js</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faJava} className="icono"/><h3>Java</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faRust} className="icono"/><h3>Rust</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faDatabase} className="icono"/><h3>NoSQL</h3></div>
-            </div>
-
-            {/* Tools */}
-            <h2  className="titulo">Tools</h2>
-            <div className="cards">
-              <div className="card"><FontAwesomeIcon icon={faGitSquare} className="icono"/><h3>Git</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faGithub} className="icono"/><h3>GitHub</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faCodepen} className="icono"/><h3>CodePen</h3></div>
-            </div>
-
-            {/* Design */}
-            <h2  className="titulo">Design</h2>
-            <div className="cards">
-              <div className="card"><FontAwesomeIcon icon={faFigma} className="icono"/><h3>Figma</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faWordpress} className="icono"/><h3>WordPress</h3></div>
-              <div className="card"><FontAwesomeIcon icon={faShopify} className="icono"/><h3>Shopify</h3></div>
-            </div>
-          </div>
-        </section>
+      
 
 
-       {/* Contact */}
+
+
+{/* Certificates - Modern Flip Card Grid */}
+<section id="certificates" className="fade-in">
+    <motion.h1
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+    >
+        Certificates
+    </motion.h1>
+
+    <motion.div
+        className="certificates-grid"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.1 }}
+    >
+        {certificatesData.map((cert) => (
+            <motion.div
+                key={cert.id}
+                className="certificate-item"
+                variants={certificateVariants}
+                // Quitamos el onClick del contenedor principal, la imagen se mostrará al voltear
+            >
+                <div className="flip-card-inner">
+                    
+                    {/* CARA FRONTAL (La Imagen) */}
+                    <div className="flip-card-front">
+                        <img src={cert.imgSrc} alt={cert.alt} />
+                    </div>
+
+                    {/* CARA TRASERA (El Título/Info) */}
+                    <div className="flip-card-back">
+                        <h3>{cert.title}</h3>
+                        <p>Issued by: {cert.issuer}</p>
+                        <a 
+                            href={cert.imgSrc} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            style={{ color: '#fff', textDecoration: 'underline' }}
+                        >
+                            View Credential
+                        </a>
+                    </div>
+                </div>
+            </motion.div>
+        ))}
+    </motion.div>
+</section>
+
+  {/* Technologies */}
+     <section id="technologies" className="technologies fade-in">
+  <h1 className="tec-title">Knowledge and Skills</h1>
+
+  <div className="carousel">
+    <div className="carousel-track">
+      <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faReact} className="icono"/><h3>React</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faVuejs} className="icono"/><h3>Vue</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faAngular} className="icono"/><h3>Angular</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faNodeJs} className="icono"/><h3>Node.js</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faJava} className="icono"/><h3>Java</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faRust} className="icono"/><h3>Rust</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faDatabase} className="icono"/><h3>NoSQL</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faGitSquare} className="icono"/><h3>Git</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faGithub} className="icono"/><h3>GitHub</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faCodepen} className="icono"/><h3>CodePen</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faFigma} className="icono"/><h3>Figma</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faWordpress} className="icono"/><h3>WordPress</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faShopify} className="icono"/><h3>Shopify</h3></div>
+
+      {/* 🔁 Duplicado para que el scroll sea continuo */}
+      <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
+      <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
+    </div>
+  </div>
+</section>
+
+
+      </main>
+      
+  
+   {/* Contact */}
 <section id="contact" className="contact">
   <div className="container">
     <motion.h1 
@@ -248,9 +314,6 @@ const Portafolio = ({ theme, setTheme }) => {
     </div>
   </div>
 </section>
-
-      </main>
-
       {/* Footer with Message Box */}
       <footer className="footer">
         <div className="footer-content">
@@ -290,6 +353,7 @@ const Portafolio = ({ theme, setTheme }) => {
             </a>
           </div>
 
+  
          {/* Form */}
       <motion.form 
         className="contact-form"

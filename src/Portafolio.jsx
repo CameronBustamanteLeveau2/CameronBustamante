@@ -21,14 +21,14 @@ import { motion } from "framer-motion";
 import { faMailReply } from '@fortawesome/free-solid-svg-icons/faMailReply';
 // Data for certificates
 const certificatesData = [
-  { id: 1, title: "HTML, CSS, JS", imgSrc: "/c1.png", alt: "React Basics Certificate" },
-  { id: 2, title: "DATA Science ETHICS", imgSrc: "/c2.png", alt: "FullStack Certificate" },
-  { id: 3, title: "Cybersecurity for Everyones", imgSrc: "/c3.png", alt: "JavaScript Certificate" },
-  { id: 4, title: "Python for Everybody", imgSrc: "/c4.png", alt: "RWD Certificate" },
-  { id: 5, title: "Supply Chain Analytics Essentials", imgSrc: "/c5.png", alt: "Figma Certificate" },
-  { id: 5, title: "Python to Access Web Data", imgSrc: "/c8.png", alt: "Figma Certificate" },
-  { id: 6, title: "Data Science Ethics", imgSrc: "/c6.png", alt: "Figma Certificate" },
-  { id: 7, title: "Python Data Structures", imgSrc: "/c7.png", alt: "Figma Certificate" },
+  { id: 1, title: "HTML, CSS, JS", imgSrc: "./assets/c1.png", alt: "React Basics Certificate" },
+  { id: 2, title: "DATA Science ETHICS", imgSrc: "./assets/c2.png", alt: "FullStack Certificate" },
+  { id: 3, title: "Cybersecurity for Everyones", imgSrc: "./assets/c3.png", alt: "JavaScript Certificate" },
+  { id: 4, title: "Python for Everybody", imgSrc: "./assets/c4.png", alt: "RWD Certificate" },
+  { id: 5, title: "Supply Chain Analytics Essentials", imgSrc: "./assets/c5.png", alt: "Figma Certificate" },
+  { id: 5, title: "Python to Access Web Data", imgSrc: "./assets/c8.png", alt: "Figma Certificate" },
+  { id: 6, title: "Data Science Ethics", imgSrc: "./assets/c6.png", alt: "Figma Certificate" },
+  { id: 7, title: "Python Data Structures", imgSrc: "./assets/c7.png", alt: "Figma Certificate" },
 
 ];
 

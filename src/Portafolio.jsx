@@ -19,17 +19,25 @@ import Music from './Audio.jsx';
 import imgyo from './assets/imp.png';
 import { motion } from "framer-motion";
 import { faMailReply } from '@fortawesome/free-solid-svg-icons/faMailReply';
+import cert1 from './assets/c1.png';
+import cert2 from './assets/c2.png';
+import cert3 from './assets/c3.png';
+import cert4 from './assets/c4.png';
+import cert5 from './assets/c5.png';
+import cert6 from './assets/c6.png';
+import cert7 from './assets/c7.png';
+import cert8 from './assets/c8.png';
 // Data for certificates
 const certificatesData = [
-  { id: 1, title: "HTML, CSS, JS", imgSrc: "./assets/c1.png", alt: "React Basics Certificate" },
-  { id: 2, title: "DATA Science ETHICS", imgSrc: "./assets/c2.png", alt: "FullStack Certificate" },
-  { id: 3, title: "Cybersecurity for Everyones", imgSrc: "./assets/c3.png", alt: "JavaScript Certificate" },
-  { id: 4, title: "Python for Everybody", imgSrc: "./assets/c4.png", alt: "RWD Certificate" },
-  { id: 5, title: "Supply Chain Analytics Essentials", imgSrc: "./assets/c5.png", alt: "Figma Certificate" },
-  { id: 5, title: "Python to Access Web Data", imgSrc: "./assets/c8.png", alt: "Figma Certificate" },
-  { id: 6, title: "Data Science Ethics", imgSrc: "./assets/c6.png", alt: "Figma Certificate" },
-  { id: 7, title: "Python Data Structures", imgSrc: "./assets/c7.png", alt: "Figma Certificate" },
-
+  // Usa las variables importadas (cert1, cert2, etc.)
+  { id: 1, title: "HTML, CSS, JS", imgSrc: cert1, alt: "React Basics Certificate" },
+  { id: 2, title: "DATA Science ETHICS", imgSrc: cert2, alt: "FullStack Certificate" },
+  { id: 3, title: "Cybersecurity for Everyones", imgSrc: cert3, alt: "JavaScript Certificate" },
+  { id: 4, title: "Python for Everybody", imgSrc: cert4, alt: "RWD Certificate" },
+  { id: 5, title: "Supply Chain Analytics Essentials", imgSrc: cert5, alt: "Figma Certificate" },
+  { id: 6, title: "Python to Access Web Data", imgSrc: cert8, alt: "Figma Certificate" },
+  { id: 7, title: "Data Science Ethics", imgSrc: cert6, alt: "Figma Certificate" },
+  { id: 8, title: "Python Data Structures", imgSrc: cert7, alt: "Figma Certificate" }, // Corregido ID duplicado
 ];
 
 // Framer Motion Variants for the grid items

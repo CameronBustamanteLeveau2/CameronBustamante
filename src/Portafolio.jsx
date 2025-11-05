@@ -120,7 +120,7 @@ const Portafolio = ({ theme, setTheme }) => {
               <div className="container">
                 <div className="location">
                   <FontAwesomeIcon className="dato-icon" icon={faLocationDot} />
-                  <p>Lima, Peru</p>
+                  <p> Coachella, CA</p>
                 </div>
                 <div className="grade">
                   <FontAwesomeIcon className="dato-icon" icon={faGraduationCap} />

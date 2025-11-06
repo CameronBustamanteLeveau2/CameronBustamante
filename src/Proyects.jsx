@@ -9,7 +9,7 @@ import Proyectope7 from './assets/proyecto7.png';
 import Proyectope8 from './assets/proyecto8.png';
 import Proyectope9 from './assets/projecto9.png';
 import Proyectope10 from './assets/projecto10.png';
-
+import Proyectope11 from './assets/projecto11.png';
 
 import './portafolio.css';
 
@@ -83,6 +83,13 @@ const Proyects = () => {
      {
       title: "Jobsy ",
       description: "UX concept for an app that connects users with local technicians for quick fixes.",
+      image: Proyectope10,
+      link: "#",
+      tags: ["#UX ", " #Service"]
+    },
+     {
+      title: "EventQR ",
+      description: "An Event Management Platform that simplifies event organization and enhances attendee experience through QR code technology.",
       image: Proyectope10,
       link: "#",
       tags: ["#UX ", " #Service"]

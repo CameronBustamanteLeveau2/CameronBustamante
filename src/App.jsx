@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Portafolio from './Portafolio'; // Cambié el nombre del archivo a Portafolio
+import Portafolio from './Portafolio'; 
 
 const App = () => {
-  const [theme, setTheme] = useState('light'); // 'light' es el valor inicial
+  const [theme, setTheme] = useState('light'); 
 
   return (
     <div>

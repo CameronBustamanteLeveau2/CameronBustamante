@@ -83,14 +83,14 @@ const Proyects = () => {
      {
       title: "Jobsy ",
       description: "UX concept for an app that connects users with local technicians for quick fixes.",
-      image: Proyectope11,
+      image: Proyectope10,
       link: "#",
       tags: ["#UX ", " #Service"]
     },
      {
       title: "EventQR ",
       description: "An Event Management Platform that simplifies event organization and enhances attendee experience through QR code technology.",
-      image: Proyectope10,
+      image: Proyectope11,
       link: "#",
       tags: ["#UX ", " #Service"]
     }

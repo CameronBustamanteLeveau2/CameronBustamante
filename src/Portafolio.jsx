@@ -251,23 +251,22 @@ const Portafolio = ({ theme, setTheme }) => {
 
   <div className="carousel">
     <div className="carousel-track">
-      <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faReact} className="icono"/><h3>React</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faVuejs} className="icono"/><h3>Vue</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faAngular} className="icono"/><h3>Angular</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faNodeJs} className="icono"/><h3>Node.js</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faJava} className="icono"/><h3>Java</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faRust} className="icono"/><h3>Rust</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faDatabase} className="icono"/><h3>NoSQL</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faGitSquare} className="icono"/><h3>Git</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faGithub} className="icono"/><h3>GitHub</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faCodepen} className="icono"/><h3>CodePen</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faFigma} className="icono"/><h3>Figma</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faWordpress} className="icono"/><h3>WordPress</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faShopify} className="icono"/><h3>Shopify</h3></div>
-
+       <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faReact} className="icono"/><h3>React</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faVuejs} className="icono"/><h3>Vue</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faAngular} className="icono"/><h3>Angular</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faNodeJs} className="icono"/><h3>Node.js</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faJava} className="icono"/><h3>Java</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faRust} className="icono"/><h3>Rust</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faDatabase} className="icono"/><h3>NoSQL</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faGitSquare} className="icono"/><h3>Git</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faGithub} className="icono"/><h3>GitHub</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faCodepen} className="icono"/><h3>CodePen</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faFigma} className="icono"/><h3>Figma</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faWordpress} className="icono"/><h3>WordPress</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faShopify} className="icono"/><h3>Shopify</h3></div>
     
     </div>
   </div>

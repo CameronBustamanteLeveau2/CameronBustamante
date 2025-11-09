@@ -385,7 +385,7 @@ align-items: flex-end;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -394,7 +394,7 @@ align-items: flex-end;
   animation-play-state: paused;
 }
 
-/* 📱 Responsive */
+/*  Responsive trato */
 @media (max-width: 768px) {
   .carousel-track {
     animation-duration: 60s; /* más lento en móvil */
@@ -465,13 +465,13 @@ align-items: flex-end;
     transition: transform 0.5s ease-in-out;
 }
 .cards {
-  display: flex;              /* Coloca los elementos en una fila */
-  flex-wrap: nowrap;          /* Evita que se vayan a otra línea */
-  justify-content: center;    /* Centra las tarjetas horizontalmente */
-  align-items: center;        /* Alinea verticalmente */
-  gap: 20px;                  /* Espacio entre las tarjetas */
-  margin: 0 auto;             /* Centra el contenedor en la página */
-  padding: 20px;              /* Espaciado interno */
+  display: flex;             
+  flex-wrap: nowrap;         
+  justify-content: center;    
+  align-items: center;       
+  gap: 20px;                  
+  margin: 0 auto;             
+  padding: 20px;         
 }
 
 .card {
@@ -608,11 +608,11 @@ padding: 20px;
 
     margin-top: 50px;
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten si no caben en una sola línea */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    flex-direction: row; /* Asegura que los elementos estén en línea */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    flex-direction: row; 
     align-items: center;
-    gap: 20px; /* Espacio entre los elementos */
+    gap: 20px; 
 }
 
 
@@ -814,20 +814,20 @@ margin: 15px;
           .project-cards {
             display: flex; 
             flex-direction: column; 
-            justify-content: center; /* Centra los elementos dentro del contenedor */
-            align-items: center; /* Asegura que los elementos estén centrados horizontalmente */
+            justify-content: center; 
+            align-items: center;
             gap: 10px; 
             width: 100%; 
           }
           
           .project-card {
-            width: 100%; /* Hace que cada tarjeta ocupe todo el ancho del contenedor */
+            width: 100%; 
             margin: 10px 0; /* Agrega márgenes entre las tarjetas */
           }
           
           .carousel-arrow {
-            background-color: rgba(96, 46, 0, 0); /* El fondo de las flechas */
-            color: rgba(255, 255, 255, 0); /* El color del texto de las flechas */
+            background-color: rgba(96, 46, 0, 0); 
+            color: rgba(255, 255, 255, 0); 
           }
      
         

@@ -351,6 +351,8 @@ align-items: flex-end;
   flex-wrap: nowrap;
   gap: 20px; /* separa las tarjetas */
   animation: scroll-left 20s linear infinite;
+      width: max-content;
+
 }
 
 .card {
@@ -378,13 +380,12 @@ align-items: flex-end;
   animation: cambiarColor 5s infinite alternate;
 }
 
-/* 🎞️ Animación del carrusel */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-85%);
+    transform: translateX(-50%);
   }
 }
 

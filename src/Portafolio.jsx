@@ -268,10 +268,7 @@ const Portafolio = ({ theme, setTheme }) => {
       <div className="card"><FontAwesomeIcon icon={faWordpress} className="icono"/><h3>WordPress</h3></div>
       <div className="card"><FontAwesomeIcon icon={faShopify} className="icono"/><h3>Shopify</h3></div>
 
-      {/* 🔁 Duplicado para que el scroll sea continuo */}
-      <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
-      <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
+    
     </div>
   </div>
 </section>

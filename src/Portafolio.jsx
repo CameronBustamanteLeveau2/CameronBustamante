@@ -9,7 +9,8 @@ import {
 import { 
   faLinkedin, faGithub, faReact, faJsSquare, faVuejs, faGitSquare, 
   faNodeJs, faCss3, faHtml5, faWordpress, faFigma, faCodepen, 
-  faAngular, faJava, faRust, faShopify 
+  faAngular, faJava, faRust, faShopify, 
+  faWhatsapp
 } from '@fortawesome/free-brands-svg-icons'; 
 import yoImage from './assets/yo.png';
 import yoImage2 from "./assets/yo2.png";
@@ -27,6 +28,8 @@ import cert5 from './assets/c5.png';
 import cert6 from './assets/c6.png';
 import cert7 from './assets/c7.png';
 import cert8 from './assets/c8.png';
+import cert9 from './assets/c9.png';
+
 // Data for certificates
 const certificatesData = [
   // Usa las variables importadas (cert1, cert2, etc.)
@@ -37,10 +40,11 @@ const certificatesData = [
   { id: 5, title: "Supply Chain Analytics Essentials", imgSrc: cert5, alt: "Figma Certificate" },
   { id: 6, title: "Python to Access Web Data", imgSrc: cert8, alt: "Figma Certificate" },
   { id: 7, title: "Data Science Ethics", imgSrc: cert6, alt: "Figma Certificate" },
-  { id: 8, title: "Python Data Structures", imgSrc: cert7, alt: "Figma Certificate" }, // Corregido ID duplicado
+  { id: 8, title: "Python Data Structures", imgSrc: cert7, alt: "Figma Certificate" }, 
+    { id: 9, title: "Pixel Art for Videogames", imgSrc: cert9, alt: "Figma Certificate" }, 
+
 ];
 
-// Framer Motion Variants for the grid items
 const certificateVariants = {
     hidden: { opacity: 0, y: 50, scale: 0.95 },
     visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
@@ -97,49 +101,54 @@ const Portafolio = ({ theme, setTheme }) => {
           </nav>
         </div>
 
-        <div className="header-content container">
-          <div className="header-txt">
-            <motion.h1 
-              initial={{ opacity: 0, y: -30 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.8 }}
-            >
-              Cameron Charllotte Bustamante
-            </motion.h1>
+       <div className="header-content container">
+    <div className="header-txt">
+        <motion.h1 
+            initial={{ opacity: 0, y: -30 }} 
+            animate={{ opacity: 1, y: 0 }} 
+            transition={{ duration: 0.8 }}
+        >
+            Cameron Charllotte Bustamante
+        </motion.h1>
 
-            <motion.p 
-              className="slogan"
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              transition={{ delay: 0.5 }}
-            >
-              <span>Web Developer</span>
-            </motion.p>
+        <motion.p 
+            className="slogan"
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            transition={{ delay: 0.5 }}
+        >
+            <span> Full-Stack Developer</span> 
+        </motion.p>
 
-            <section className="location-grade">
-              <div className="container">
-                <div className="location">
-                  <FontAwesomeIcon className="dato-icon" icon={faLocationDot} />
-                  <p> Coachella, CA</p>
-                </div>
-                <div className="grade">
-                  <FontAwesomeIcon className="dato-icon" icon={faGraduationCap} />
-                  <p>Software Engineering Student</p>
-                </div>
-              </div>
-            </section>
+        {/* Datos de Ubicación y Grado (Clase: .dato-list) */}
+        <section className="dato-list">
+            <div className="location">
+                <FontAwesomeIcon className="dato-icon" icon={faLocationDot} />
+                <p> Coachella, CA</p>
+            </div>
+            <div className="grade">
+                <FontAwesomeIcon className="dato-icon" icon={faGraduationCap} />
+                <p>Software Engineering Student</p>
+            </div>
+        </section>
 
-            <section className="social-media">
-              <div className="container">
-                <div className="social-icons">
-                  <a className="pp" href="https://www.linkedin.com/in/cameron-charlotte-bustamante-a03329265/" target="_blank" rel="noopener noreferrer">
+        <section className="action-buttons">
+            <DescargarCV/>
+            <div className="social-icons">
+                <a className="pp" href="https://www.linkedin.com/in/cameron-charlotte-bustamante-a03329265/" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} />
-                  </a>
-                  <DescargarCV/>
-                </div>
-              </div>
-            </section>
-          </div>
+                </a>
+                        <a className="pp" href="https://wa.me/51954838805" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faWhatsapp} /> 
+                </a>
+                {/* Agrega tu GitHub aquí para que sea más visible */}
+                <a className="pp" href="https://github.com/CameronBustamanteLeveau2" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faGithub} /> 
+                </a>
+                 
+            </div>
+        </section>
+    </div>
 
           <motion.div 
             className="header-img"
@@ -147,50 +156,86 @@ const Portafolio = ({ theme, setTheme }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <img src={theme === 'light' ? yoImage : yoImage2} alt="me" />
+<div className="profile-image-container">            <img src={theme === 'light' ? yoImage : yoImage2} alt="me" />
+          </div>
           </motion.div>
         </div>
         <Music/>
       </header>
 
       <main>
-        
-      {/* About Me */}
-        <section id="about-me" className="about-me">
-          <div className="about-me-box">
-            <motion.h1
-              initial={{ opacity: 0, y: -30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              About <span>Me</span>
-            </motion.h1>
 
+
+{/* About Me */}
+<section id="about-me" className="about-me">
+    <div className="about-me-box">
+        <motion.h1
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+        >
+            ABOUT <span>ME</span>
+        </motion.h1>
+
+        <div className="about-content-wrapper">
+            {/* Imagen en la primera columna (o donde lo defina el CSS) */}
             <motion.img
-              src={imgyo}
-              alt="laptop"
-              className="imglap"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
+                src={imgyo}
+                alt="laptop"
+                className="imglap"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
             />
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
+            {/* Texto en la segunda columna (o donde lo defina el CSS) */}
+            <motion.div 
+                className="about-text-content"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
             >
-              I am passionate about technology and web development, focusing on creating intuitive and engaging digital experiences.<br/>
-              I enjoy learning new tools and honing my skills in React.js, JavaScript, HTML, CSS, and Git.<br/>
-              Motivated by problem-solving and innovation, I combine creativity with functionality to build efficient web solutions.<br/>
-              Committed to continuous learning, I adapt to technological trends and bring value to every project I develop.
-            </motion.p>
-          </div>
-        </section>
-      
-          <Proyects /> 
+                <p>
+                    I am passionate about **technology and web development**, focusing on creating intuitive and engaging digital experiences.
+                </p>
+                <p>
+                    I enjoy learning new tools and honing my skills in **React.js, JavaScript, HTML, CSS, and Git**. I'm currently expanding my knowledge in the Rust programming language.
+                </p>
+                <p>
+                    Motivated by **problem-solving and innovation**, I combine creativity with functionality to build efficient web solutions. Committed to continuous learning, I adapt to technological trends and bring value to every project I develop.
+                </p>
+            </motion.div>
+        </div>
+    </div>
+</section>
 
-      
+
+  {/* Technologies */}
+     <section id="technologies" className="technologies fade-in">
+  <h1 className="tec-title">Knowledge and Skills</h1>
+
+  <div className="carousel">
+    <div className="carousel-track">
+       <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faReact} className="icono"/><h3>React</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faVuejs} className="icono"/><h3>Vue</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faAngular} className="icono"/><h3>Angular</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faNodeJs} className="icono"/><h3>Node.js</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faJava} className="icono"/><h3>Java</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faRust} className="icono"/><h3>Rust</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faDatabase} className="icono"/><h3>NoSQL</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faGitSquare} className="icono"/><h3>Git</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faGithub} className="icono"/><h3>GitHub</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faCodepen} className="icono"/><h3>CodePen</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faFigma} className="icono"/><h3>Figma</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faWordpress} className="icono"/><h3>WordPress</h3></div>
+  <div className="card"><FontAwesomeIcon icon={faShopify} className="icono"/><h3>Shopify</h3></div>
+    
+    </div>
+  </div>
+</section>
 
 
 
@@ -244,33 +289,7 @@ const Portafolio = ({ theme, setTheme }) => {
         ))}
     </motion.div>
 </section>
-
-  {/* Technologies */}
-     <section id="technologies" className="technologies fade-in">
-  <h1 className="tec-title">Knowledge and Skills</h1>
-
-  <div className="carousel">
-    <div className="carousel-track">
-       <div className="card"><FontAwesomeIcon icon={faHtml5} className="icono"/><h3>HTML</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faCss3} className="icono"/><h3>CSS</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faJsSquare} className="icono"/><h3>JavaScript</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faReact} className="icono"/><h3>React</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faVuejs} className="icono"/><h3>Vue</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faAngular} className="icono"/><h3>Angular</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faNodeJs} className="icono"/><h3>Node.js</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faJava} className="icono"/><h3>Java</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faRust} className="icono"/><h3>Rust</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faDatabase} className="icono"/><h3>NoSQL</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faGitSquare} className="icono"/><h3>Git</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faGithub} className="icono"/><h3>GitHub</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faCodepen} className="icono"/><h3>CodePen</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faFigma} className="icono"/><h3>Figma</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faWordpress} className="icono"/><h3>WordPress</h3></div>
-  <div className="card"><FontAwesomeIcon icon={faShopify} className="icono"/><h3>Shopify</h3></div>
-    
-    </div>
-  </div>
-</section>
+      <Proyects /> 
 
 
       </main>

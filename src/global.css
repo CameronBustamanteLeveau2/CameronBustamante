@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap');
+
+
+:root {
+  --bg: #f4f1ea;
+  --ink: #121212;
+  --gold: #b2935b;
+  --accent-red: #d43f33;
+
+  --serif: 'Bodoni Moda', serif;
+  --sans: 'Montserrat', sans-serif;
+
+  --radius: 14px;
+  --transition: 0.35s ease;
+
+  --accent-red: #d43f33;
+  --gold: #b2935b;
+  --bg-cream: #f8f6f2;
+  --ink: #111111;
+  --serif: 'Bodoni Moda', serif;
+}
+
+.cover-hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-cream);
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+}

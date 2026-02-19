@@ -1,23 +1,40 @@
 
-import  { useEffect } from 'react';
-import './portafolio.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { 
-  faLocationDot, faGraduationCap, 
-  faPhone, faDatabase, faEnvelope, faBars
-} from '@fortawesome/free-solid-svg-icons'; 
-import { 
-  faLinkedin, faGithub, faReact, faJsSquare, faVuejs, faGitSquare, 
-  faNodeJs, faCss3, faHtml5, faWordpress, faFigma, faCodepen, 
-  faAngular, faJava, faRust, faShopify, faPhp,
-  faWhatsapp
-} from '@fortawesome/free-brands-svg-icons'; 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Mousewheel, Keyboard } from 'swiper/modules';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowRight,
+  faCode,
+  faDatabase,
+  faLayerGroup,
+  faMobileAlt,
+  faTerminal,
+  faPalette,
+  faServer,
+  faCloud,
+  faLock,
+  faChartLine,
+  faCogs,
+  faBrain
+} from '@fortawesome/free-solid-svg-icons';
 
-import Proyects from './Proyects.jsx'; 
+import {
+  faGithub,
+  faReact,
+  faJs,
+  faNodeJs,
+  faPython,
+  faDocker,
+  faFigma
+} from '@fortawesome/free-brands-svg-icons';
+
+import 'swiper/css/bundle';
+import { motion } from "framer-motion";
+
+import Proyects from './Proyects.jsx';
 import DescargarCV from './DescargasCV.jsx';
 import Music from './Audio.jsx';
-import imgyo from './assets/imp.png';
-import { motion } from "framer-motion";
+
 import cert1 from './assets/c1.png';
 import cert2 from './assets/c2.png';
 import cert3 from './assets/c3.png';
@@ -27,265 +44,239 @@ import cert6 from './assets/c6.png';
 import cert7 from './assets/c7.png';
 import cert8 from './assets/c8.png';
 import cert9 from './assets/c9.png';
+import cert10 from './assets/c10.png';
+import cert11 from './assets/c11.png';
+import cert12 from './assets/c12.png';
+import cert13 from './assets/c13.png';
+import cert14 from './assets/c14.png';  
 
 const certificatesData = [
-  { id: 1, title: "HTML, CSS, JS", imgSrc: cert1, alt: "React Basics Certificate" },
-  { id: 2, title: "DATA Science ETHICS", imgSrc: cert2, alt: "FullStack Certificate" },
-  { id: 3, title: "Cybersecurity for Everyones", imgSrc: cert3, alt: "JavaScript Certificate" },
-  { id: 4, title: "Python for Everybody", imgSrc: cert4, alt: "RWD Certificate" },
-  { id: 5, title: "Supply Chain Analytics Essentials", imgSrc: cert5, alt: "Figma Certificate" },
-  { id: 6, title: "Python to Access Web Data", imgSrc: cert8, alt: "Figma Certificate" },
-  { id: 7, title: "Data Science Ethics", imgSrc: cert6, alt: "Figma Certificate" },
-  { id: 8, title: "Python Data Structures", imgSrc: cert7, alt: "Figma Certificate" }, 
-    { id: 9, title: "Pixel Art for Videogames", imgSrc: cert9, alt: "Figma Certificate" }, 
+  { id: 1, title: "HTML, CSS, and Javascript for Web Developers", imgSrc: cert1 },
+  { id: 2, title: "Data Science Ethics", imgSrc: cert2 },
+  { id: 3, title: "Cybersecurity for Everyones", imgSrc: cert3 },
+  { id: 4, title: "Supply Chain Analytics Essentials", imgSrc: cert5 },
+  { id: 6, title: "Python Data Structures", imgSrc: cert7 },
+    { id: 7, title: "Using Python to Access Web Data", imgSrc: cert8 },
+      { id: 5, title: "Pixel Art for Videogames", imgSrc: cert9 },
 
+    { id: 9, title: "Concept Art For Video Games", imgSrc: cert10 },
+  { id: 10, title: "Low Poly Art For Video Games", imgSrc: cert11 },
+  { id: 11, title: "Feature Engineering", imgSrc: cert12 },
+  { id: 12, title: "Build, Train and Deploy ML Models with Keras on Google Cloud", imgSrc: cert13 },
+  { id: 13, title: "Machine Learning in the Enterprise", imgSrc: cert14 },
 ];
 
 const certificateVariants = {
-    hidden: { opacity: 0, y: 50, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 }
+  }
 };
 
-const Portafolio = ({ theme, setTheme }) => {
+const Portafolio = () => {
   return (
-    <div className={`portfolio-wrapper ${theme}`}>
-    <header className="hero-grid">
-  
-  <div className="grid-item profile-block">
-    <div className="profile-placeholder">
-      <motion.span initial={{scale:0}} animate={{scale:1}}>CB</motion.span>
-    </div>
-    <div className="profile-tag">
-      <p>BASED IN USA</p>
-      <p>SOFTWARE ENGINEER STUDENT</p>
-    </div>
-  </div>
+    <div className="portfolio-wrapper">
+      <Swiper
+        direction="horizontal"
+        modules={[Mousewheel, Keyboard]}
+        mousewheel
+        keyboard
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="magazine-page cover-hero textured-bg editorial-section-padd">
+            <div className="hero-background-text creative-mini">DESIGN</div>
+            
+            <header className="magazine-header">
+              <div className="top-info">
+                <span className="edition">VOL. 2026 / PORTFOLIO</span>
+                <span className="brand-name">CAMERON BUSTAMANTE</span>
+              </div>
 
-  <div className="grid-item title-block">
-    <h1 className="main-title">Port<br/>folio</h1>
-  </div>
+              <div className="main-title-container">
+                <h1 className="main-title-mega">
+                  Fullstack <span className="italic-serif">D</span>eveloper
+                </h1>
+                <div className="vinyl-peek"></div>
+              </div>
+            </header>
 
-  <div className="grid-item deco-block">
-    <div className="frame-deco"></div>
-    <p className="quote">"The only way <strong>to do great work</strong> is to <strong>love what u do</strong>."</p>
-    <div className="year-tag">- Steve Jobs</div>
-  </div>
+            <main className="hero-main-layout-editorial">
+              <div className="hero-left-editorial">
+                <div className="hero-bio-main">
+                  <span className="drop-cap">C</span>
+                  <p>
+                    rafting digital ecosystems where <span className="highlight">performance</span> 
+                    meets <span className="highlight">editorial aesthetics</span>. 
+                    Based in USA, working globally.
+                  </p>
+                </div>
 
+                <div className="hero-actions-editorial">
+                  <DescargarCV />
+                  <a href="https://github.com" className="btn-modern-minimal">
+                    <FontAwesomeIcon icon={faGithub} /> GITHUB
+                  </a>
+                </div>
+              </div>
 
-  <div className="grid-item intro-block">
-    <div className="intro-content">
-      <span className="availability-tag">● Digital Experience Designer</span>
-      <h2>Cameron Charlotte <br/><em>Bustamante</em></h2>
-      <p>Full-Stack Developer focused on React and modern web ecosystems. Passionate about problem-solving and minimalist UI.</p>
-      <div className="action-row">
-        <DescargarCV />
-        <div className="hero-socials">
-          <a href="#"><FontAwesomeIcon icon={faGithub} /></a>
-        </div>
-      </div>
-    </div>
-  </div>
+              <div className="hero-right-editorial">
+                <div className="professional-specs-column">
+                  <div className="spec-group">
+                    <span className="spec-label">ROLE:</span>
+                    <p className="spec-value">SOFTWARE ENGINEER</p>
+                  </div>
+                  <div className="spec-group">
+                    <span className="spec-label">FOCUS:</span>
+                    <p className="spec-value">UX / UI ARCHITECTURE</p>
+                  </div>
+                  <div className="spec-group">
+                    <span className="spec-label">STATUS:</span>
+                    <p className="spec-value-small">
+                      Lead Frontend at <strong>Riffazo</strong>.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Elemento decorativo tipo revista */}
+                <div className="editorial-mini-note">
+                   EST. 2024 — AVAILABLE FOR FREELANCE
+                </div>
+              </div>
+            </main>
+          </div>
+        </SwiperSlide>
 
-  <div className="grid-item vertical-block">
-    <div className="vertical-text">DESIGN</div>
-  </div>
+        {/* SECCIÓN 02: PROYECTOS CON MARGEN */}
+        <SwiperSlide>
+          <div className="magazine-page-scroll editorial-section-padd">
+            <div className="section-spacer">
+              <Proyects />
+            </div>
+          </div>
+        </SwiperSlide>
 
-  
- 
- 
- 
-
-  <div className="grid-item music-ad-block">
-  <div className="ad-header">
-    <span className="ad-label">SPECIAL SELECTION</span>
-    <span className="ad-id">VOL. 26</span>
-  </div>
-  
-  <div className="ad-content">
-    <h4 className="ad-title">SONIC</h4>
-    <h4 className="ad-title-outline">TEXTURES</h4>
-    <div className="music-player-mini">
-       <Music /> {/* Tu componente de audio aquí */}
-    </div>
-  </div>
-
-  <div className="ad-footer">
-    <p>PRESS PLAY TO CURATE YOUR EXPERIENCE</p>
-  </div>
-</div>
-<div className="grid-item work-status-block">
-  <div className="work-meta">
-    <span className="status-label">STATUS // ACTIVE</span>
-  </div>
-  
-  <div className="work-main">
-    <h3 className="work-title">Freelancer</h3>
-    <p className="work-subtitle">Currently collaborating with <em>Riffazo </em>  as Frontend Developer.</p>
-  </div>
-
-  <div className="work-footer">
-    <div className="footer-line"></div>
-    <div className="footer-details">
-      <span>EST. 2024</span>
-      <span>Remote</span>
-    </div>
-  </div>
-</div>
- <div className="grid-item footer-hero">
-      <p>SELECTED WORKS</p>
-      <strong>↓ SCROLL</strong>
-  </div>
-</header>
-
-
-
-      <main className="container-editorial">
-          <div className="about-split-container">
-    <motion.div 
-      className="about-image-side"
-      initial={{ x: "-100%" }}
-      whileInView={{ x: 0 }}
-      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+        {/* SECCIÓN 03: CREDENCIALES */}
+        <SwiperSlide>
+          <div className="magazine-page-scroll editorial-section-padd">
+            <div className="editorial-container">
+              <div className="archive-header">
+                <h2 className="main-title-small">ACADEMIC <em>RECORDS</em></h2>
+              </div>
+              <div className="certs-grid-modern">
+  {certificatesData.map(cert => (
+    <motion.div
+      className="cert-card-modern"
+      key={cert.id}
+      variants={certificateVariants}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true }}
     >
-      <img src={imgyo} alt="Profile" />
-    </motion.div>
+      <div className="cert-image-modern">
+        <img src={cert.imgSrc} alt={cert.title} />
+      </div>
 
-    <motion.div 
-      className="about-text-side"
-      initial={{ x: "100%" }}
-      whileInView={{ x: 0 }}
-      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      viewport={{ once: true }}
-    >
-      <div className="text-content">
-        <span className="section-label">01 // BIOGRAPHY</span>
-        <h2 className="editorial-title">Cameron Charlotte <em>Bustamante</em></h2>
-        <p className="editorial-p">
-          I combine <strong>creativity</strong> with <strong>functionality</strong> to build efficient web solutions. 
-          Currently expanding my horizons with <strong>Rust</strong> and advanced Backend architectures.
-        </p>
-        <div className="editorial-signature">C. Bustamante — 2026</div>
+      <div className="cert-info-modern">
+        <span className="cert-badge">CERTIFICATION</span>
+        <h3>{cert.title}</h3>
       </div>
     </motion.div>
-  </div>
-    <section className="skills-editorial-section">
-  <div className="skills-header">
-    <h2 className="tec-title">CORE <em>SKILLS</em></h2>
-    <div className="header-line"></div>
+  ))}
+</div>
+            </div>
+          </div>
+        </SwiperSlide>
+
+  <SwiperSlide>
+         <div className="about-mosaic-pro">
+  <div className="mosaic-big">
+    <h2>THE <em>NARRATIVE</em></h2>
+    <p>
+      I design digital experiences where performance and aesthetics coexist.
+      My goal is to build interfaces that feel elegant, intuitive and powerful.
+    </p>
   </div>
 
-  <div className="skills-magazine-grid">
-    <div className="skill-column">
-      <span className="skill-cat">FRONTEND</span>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faReact} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>Advanced Frameworks & Hooks</small>
-        </div>
-      </div>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faJsSquare} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>ES6+ Architecture & Logic</small>
-        </div>
-      </div>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faHtml5} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>Semantic UI & Responsive Design</small>
-        </div>
-      </div>
-    </div>
-
-    <div className="skill-column">
-      <span className="skill-cat">BACKEND</span>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faNodeJs} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>Rest APIs & Serverless</small>
-        </div>
-      </div>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faRust} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>High-Performance Systems</small>
-        </div>
-      </div>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faDatabase} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>SQL & NoSQL Data Management</small>
-        </div>
-      </div>
-    </div>
-
-    {/* COLUMNA 3: TOOLS */}
-    <div className="skill-column">
-      <span className="skill-cat">SYSTEMS</span>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faFigma} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>UI/UX Prototyping</small>
-        </div>
-      </div>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faGitSquare} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>Version Control & Workflow</small>
-        </div>
-      </div>
-      <div className="skill-item">
-        <FontAwesomeIcon icon={faShopify} className="skill-icon-big" />
-        <div className="skill-info">
-          <small>E-commerce Solutions</small>
-        </div>
-      </div>
-    </div>
+  <div className="mosaic-card">
+    <span>BASED IN</span>
+    <h3>USA</h3>
   </div>
-</section>
-        <Proyects />
-        
-        <section className="certificates-section">
-            <h2 className="section-title">CERTIFICATES</h2>
-            <div className="certificates-grid">
-                {certificatesData.map(cert => (
-                    <motion.div key={cert.id} className="cert-card-minimal" variants={certificateVariants} initial="hidden" whileInView="visible">
-                        <img src={cert.imgSrc} alt={cert.title} />
-                        <div className="cert-info">
-                            <h3>{cert.title}</h3>
+
+  <div className="mosaic-card">
+    <span>FOCUS</span>
+    <h3>Frontend + UX</h3>
+  </div>
+
+  <div className="mosaic-card">
+    <span>STACK</span>
+    <h3>React / Next / Node</h3>
+  </div>
+
+  <div className="mosaic-card">
+    <span>STYLE</span>
+    <h3>Editorial UI</h3>
+  </div>
+</div>
+
+        </SwiperSlide>
+  <SwiperSlide>
+          <div className="magazine-page-scroll">
+            <div className="editorial-container">
+                <div className="archive-header">
+                    <h2 className="main-title-small">CORE <em>SKILLS</em></h2>
+                    <span className="index-number"></span>
+                </div>
+                <div className="skills-icon-grid">
+                    {[
+  { name: "React / Next.js", icon: faReact },
+  { name: "JavaScript / TypeScript", icon: faJs },
+  { name: "Node.js / APIs", icon: faNodeJs },
+  { name: "Python / Data", icon: faPython },
+  { name: "ASP.NET Core", icon: faCode },
+  { name: "SQL Databases", icon: faDatabase },
+  { name: "UI Architecture", icon: faLayerGroup },
+  { name: "Responsive UI", icon: faMobileAlt },
+  { name: "Terminal / Git", icon: faTerminal },
+  { name: "Design / Figma", icon: faPalette },
+
+  // NUEVAS
+  { name: "REST API Design", icon: faCode },
+  { name: "GraphQL", icon: faDatabase },
+  { name: "Authentication / JWT", icon: faCode },
+  { name: "Web Performance", icon: faCode },
+  { name: "Testing / Jest", icon: faCode },
+  { name: "Docker Basics", icon: faLayerGroup },
+  { name: "Cloud / Deployment", icon: faDatabase },
+  { name: "Machine Learning Basics", icon: faPython },
+  { name: "Data Visualization", icon: faPalette },
+  { name: "System Design", icon: faLayerGroup },
+  { name: "UI Animations", icon: faPalette },
+  { name: "Accessibility (a11y)", icon: faMobileAlt },
+].map((skill, index) => (
+                        <div className="skill-icon-card" key={index}>
+                            <FontAwesomeIcon icon={skill.icon} className="s-icon" />
+                            <h3>{skill.name}</h3>
                         </div>
-                    </motion.div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </section>
+          </div>
+        </SwiperSlide>
+      </Swiper>
 
-          
-   
-      </main>
-  
-
-
-      <footer className="footer-editorial">
-         <div className="footer-top">
-            <h2>LET'S WORK <br/><em>TOGETHER</em></h2>
-            <div className="footer-contact-info">
-                <p>cameronbustamante2@gmail.com</p>
-                <p>+1 (760) 888-7377</p>
-            </div>
-         </div>
-         <div className="footer-bottom">
-            <p>© {new Date().getFullYear()} CAMERON BUSTAMANTE</p>
-            <div className="footer-links">
-                <a href="#about">About</a>
-                <a href="#projects">Work</a>
-                <a href="#contact">Contact</a>
-            </div>
-         </div>
+      <footer className="footer-modern-fixed">
+         <div className="footer-left">LET'S BUILD SOMETHING <em>ICONIC</em></div>
+         <div className="footer-right">cameronbustamante2@gmail.com</div>
       </footer>
-      <Music />
     </div>
   );
 };
+
+
+
+
 
 export default Portafolio;

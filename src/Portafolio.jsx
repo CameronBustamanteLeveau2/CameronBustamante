@@ -3,19 +3,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Keyboard } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faArrowRight,
   faCode,
   faDatabase,
   faLayerGroup,
   faMobileAlt,
   faTerminal,
   faPalette,
-  faServer,
-  faCloud,
-  faLock,
-  faChartLine,
-  faCogs,
-  faBrain
+
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -23,9 +17,7 @@ import {
   faReact,
   faJs,
   faNodeJs,
-  faPython,
-  faDocker,
-  faFigma
+  faPython
 } from '@fortawesome/free-brands-svg-icons';
 
 import 'swiper/css/bundle';
@@ -33,14 +25,11 @@ import { motion } from "framer-motion";
 
 import Proyects from './Proyects.jsx';
 import DescargarCV from './DescargasCV.jsx';
-import Music from './Audio.jsx';
 
 import cert1 from './assets/c1.png';
 import cert2 from './assets/c2.png';
 import cert3 from './assets/c3.png';
-import cert4 from './assets/c4.png';
 import cert5 from './assets/c5.png';
-import cert6 from './assets/c6.png';
 import cert7 from './assets/c7.png';
 import cert8 from './assets/c8.png';
 import cert9 from './assets/c9.png';
@@ -78,20 +67,26 @@ const certificateVariants = {
 const Portafolio = () => {
   return (
     <div className="portfolio-wrapper">
-      <Swiper
-        direction="horizontal"
-        modules={[Mousewheel, Keyboard]}
-        mousewheel
-        keyboard
-        className="mySwiper"
-      >
+   <Swiper
+  direction="horizontal"
+  modules={[Mousewheel, Keyboard]}
+  mousewheel={{
+    forceToAxis: true,
+    sensitivity: 1,
+    releaseOnEdges: true, // Permite soltar el control si llega al borde
+  }}
+  keyboard
+  /* Esta línea es vital: evita que Swiper bloquee el scroll en estas áreas */
+  noSwiping={true}
+  noSwipingSelector={".magazine-page-scroll"} 
+  className="mySwiper"
+>
         <SwiperSlide>
           <div className="magazine-page cover-hero textured-bg editorial-section-padd">
             <div className="hero-background-text creative-mini">DESIGN</div>
             
             <header className="magazine-header">
               <div className="top-info">
-                <span className="edition">VOL. 2026 / PORTFOLIO</span>
                 <span className="brand-name">CAMERON BUSTAMANTE</span>
               </div>
 
@@ -149,7 +144,6 @@ const Portafolio = () => {
           </div>
         </SwiperSlide>
 
-        {/* SECCIÓN 02: PROYECTOS CON MARGEN */}
         <SwiperSlide>
           <div className="magazine-page-scroll editorial-section-padd">
             <div className="section-spacer">
@@ -158,37 +152,39 @@ const Portafolio = () => {
           </div>
         </SwiperSlide>
 
-        {/* SECCIÓN 03: CREDENCIALES */}
-        <SwiperSlide>
-          <div className="magazine-page-scroll editorial-section-padd">
-            <div className="editorial-container">
-              <div className="archive-header">
-                <h2 className="main-title-small">ACADEMIC <em>RECORDS</em></h2>
-              </div>
-              <div className="certs-grid-modern">
-  {certificatesData.map(cert => (
-    <motion.div
-      className="cert-card-modern"
-      key={cert.id}
-      variants={certificateVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
-      <div className="cert-image-modern">
-        <img src={cert.imgSrc} alt={cert.title} />
+       <SwiperSlide>
+  <div className="magazine-page-scroll editorial-section-padd">
+    <div className="editorial-container">
+      <div className="archive-header">
+        <h2 className="main-title-small">ACADEMIC <em>RECORDS</em></h2>
       </div>
-
-      <div className="cert-info-modern">
-        <span className="cert-badge">CERTIFICATION</span>
-        <h3>{cert.title}</h3>
-      </div>
-    </motion.div>
-  ))}
-</div>
+      
+      <motion.div 
+        className="certs-grid-modern"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }} // Se activa al asomar un poco
+      >
+        {certificatesData.map(cert => (
+          <motion.div
+            className="cert-card-modern"
+            key={cert.id}
+            variants={certificateVariants}
+          >
+            <div className="cert-image-modern">
+              <img src={cert.imgSrc} alt={cert.title} />
             </div>
-          </div>
-        </SwiperSlide>
+            <div className="cert-info-modern">
+              <span className="cert-badge">CERTIFICATION</span>
+              <h3>{cert.title}</h3>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </div>
+</SwiperSlide>
+
 
   <SwiperSlide>
          <div className="about-mosaic-pro">

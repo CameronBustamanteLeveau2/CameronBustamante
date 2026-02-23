@@ -174,20 +174,29 @@
   line-height: 1.2;
 }
 .footer-modern-fixed {
+
   position: fixed;
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1.5rem 4rem;
-  background: var(--bg-color);
+  background: black;
+  color: white;
   border-top: 1px solid rgba(0,0,0,0.1);
   font-size: 0.75rem;
   letter-spacing: 2px;
   font-weight: 700;
   z-index: 10;
 }
+.footer-right{
+  margin-right: 150px;
+}
 
+.footer-left span{
+  color: var(--accent);
+
+}
 .hero-actions-editorial {
   display: flex;
   gap: 20px;

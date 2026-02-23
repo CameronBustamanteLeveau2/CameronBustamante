@@ -49,7 +49,6 @@ const certificatesData = [
   { id: 6, title: "Python Data Structures", imgSrc: cert7 },
     { id: 7, title: "Using Python to Access Web Data", imgSrc: cert8 },
       { id: 5, title: "Pixel Art for Videogames", imgSrc: cert9 },
-
     { id: 9, title: "Concept Art For Video Games", imgSrc: cert10 },
   { id: 10, title: "Low Poly Art For Video Games", imgSrc: cert11 },
   { id: 11, title: "Feature Engineering", imgSrc: cert12 },
@@ -273,7 +272,7 @@ const Portafolio = () => {
       </Swiper>
 
       <footer className="footer-modern-fixed">
-         <div className="footer-left">LET'S BUILD SOMETHING </div>
+         <div className="footer-left">LET'S BUILD SOMETHING <span>FABULOUS</span> </div>
          <div className="footer-right">cameronbustamante2@gmail.com</div>
       </footer>
     </div>

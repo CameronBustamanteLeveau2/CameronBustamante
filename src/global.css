@@ -1,36 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap');
-
-
+/* --- Variables de Diseño Editorial --- */
 :root {
-  --bg: #f4f1ea;
-  --ink: #121212;
-  --gold: #b2935b;
-  --accent-red: #d43f33;
-
-  --serif: 'Bodoni Moda', serif;
-  --sans: 'Montserrat', sans-serif;
-
-  --radius: 14px;
-  --transition: 0.35s ease;
-
-  --accent-red: #d43f33;
-  --gold: #b2935b;
-  --bg-cream: #f8f6f2;
-  --ink: #111111;
-  --serif: 'Bodoni Moda', serif;
-}
-
-.cover-hero {
-  position: relative;
-  overflow: hidden;
-  background-color: var(--bg-cream);
-  display: flex;
-  flex-direction: column;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font-family: var(--sans);
+  --bg-color: #f8f6f2; /* Color hueso/papel vintage */
+  --text-primary: #1a1a1a;
+  --accent: #c4a484; /* Dorado sutil o color arena */
+   --strong: #432303;
+   --destructive: #b01717; /* Rojo oscuro para elementos destructivos */
+  --serif: 'Playfair Display', serif; /* Importante usar una Serif para títulos */
+  --sans: 'Inter', sans-serif;
 }

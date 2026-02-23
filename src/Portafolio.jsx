@@ -9,7 +9,9 @@ import {
   faMobileAlt,
   faTerminal,
   faPalette,
-
+faGlobeAmericas,
+  faCompass,       
+  faFeatherAlt    
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -73,10 +75,9 @@ const Portafolio = () => {
   mousewheel={{
     forceToAxis: true,
     sensitivity: 1,
-    releaseOnEdges: true, // Permite soltar el control si llega al borde
+    releaseOnEdges: true, 
   }}
   keyboard
-  /* Esta línea es vital: evita que Swiper bloquee el scroll en estas áreas */
   noSwiping={true}
   noSwipingSelector={".magazine-page-scroll"} 
   className="mySwiper"
@@ -101,12 +102,12 @@ const Portafolio = () => {
             <main className="hero-main-layout-editorial">
               <div className="hero-left-editorial">
                 <div className="hero-bio-main">
-                  <span className="drop-cap">C</span>
-                  <p>
-                    rafting digital ecosystems where <span className="highlight">performance</span> 
-                    meets <span className="highlight">editorial aesthetics</span>. 
-                    Based in USA, working globally.
-                  </p>
+                <p>
+  I design and develop modern digital products 
+  with a strong focus on <span className="highlight"> clarity</span>, 
+  <span className="highlight"> performance</span>, and 
+  <span className="highlight"> visual storytelling</span>.
+</p>
                 </div>
 
                 <div className="hero-actions-editorial">
@@ -135,83 +136,49 @@ const Portafolio = () => {
                   </div>
                 </div>
                 
-                {/* Elemento decorativo tipo revista */}
                 <div className="editorial-mini-note">
                    EST. 2024 — AVAILABLE FOR FREELANCE
                 </div>
+
               </div>
             </main>
           </div>
         </SwiperSlide>
 
-        <SwiperSlide>
-          <div className="magazine-page-scroll editorial-section-padd">
-            <div className="section-spacer">
-              <Proyects />
-            </div>
-          </div>
-        </SwiperSlide>
 
-       <SwiperSlide>
-  <div className="magazine-page-scroll editorial-section-padd">
-    <div className="editorial-container">
-      <div className="archive-header">
-        <h2 className="main-title-small">ACADEMIC <em>RECORDS</em></h2>
-      </div>
-      
-      <motion.div 
-        className="certs-grid-modern"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }} // Se activa al asomar un poco
-      >
-        {certificatesData.map(cert => (
-          <motion.div
-            className="cert-card-modern"
-            key={cert.id}
-            variants={certificateVariants}
-          >
-            <div className="cert-image-modern">
-              <img src={cert.imgSrc} alt={cert.title} />
-            </div>
-            <div className="cert-info-modern">
-              <span className="cert-badge">CERTIFICATION</span>
-              <h3>{cert.title}</h3>
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
-  </div>
-</SwiperSlide>
-
-
-  <SwiperSlide>
-         <div className="about-mosaic-pro">
+<SwiperSlide>
+ <div className="about-mosaic-pro">
   <div className="mosaic-big">
+    <span className="section-index">01</span>
     <h2>THE <em>NARRATIVE</em></h2>
     <p>
       I design digital experiences where performance and aesthetics coexist.
       My goal is to build interfaces that feel elegant, intuitive and powerful.
+      <br /><br />
+      <span className="quote-editorial">"Code is the ink, design is the paper."</span>
     </p>
   </div>
 
   <div className="mosaic-card">
+    <FontAwesomeIcon icon={faGlobeAmericas} className="mosaic-icon" />
     <span>BASED IN</span>
     <h3>USA</h3>
   </div>
 
   <div className="mosaic-card">
+    <FontAwesomeIcon icon={faCompass} className="mosaic-icon" />
     <span>FOCUS</span>
     <h3>Frontend + UX</h3>
   </div>
 
   <div className="mosaic-card">
+    <FontAwesomeIcon icon={faLayerGroup} className="mosaic-icon" />
     <span>STACK</span>
     <h3>React / Next / Node</h3>
   </div>
 
   <div className="mosaic-card">
+    <FontAwesomeIcon icon={faFeatherAlt} className="mosaic-icon" />
     <span>STYLE</span>
     <h3>Editorial UI</h3>
   </div>
@@ -261,10 +228,52 @@ const Portafolio = () => {
             </div>
           </div>
         </SwiperSlide>
+
+        <SwiperSlide>
+          <div className="magazine-page-scroll editorial-section-padd">
+            <div className="section-spacer">
+              <Proyects />
+            </div>
+          </div>
+        </SwiperSlide>
+
+       <SwiperSlide>
+  <div className="magazine-page-scroll editorial-section-padd">
+    <div className="editorial-container">
+      <div className="archive-header">
+        <h2 className="main-title-small">ACADEMIC <em>RECORDS</em></h2>
+      </div>
+      
+      <motion.div 
+        className="certs-grid-modern"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }} 
+      >
+        {certificatesData.map(cert => (
+          <motion.div
+            className="cert-card-modern"
+            key={cert.id}
+            variants={certificateVariants}
+          >
+            <div className="cert-image-modern">
+              <img src={cert.imgSrc} alt={cert.title} />
+            </div>
+            <div className="cert-info-modern">
+              <span className="cert-badge">CERTIFICATION</span>
+              <h3>{cert.title}</h3>
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </div>
+</SwiperSlide>
+
       </Swiper>
 
       <footer className="footer-modern-fixed">
-         <div className="footer-left">LET'S BUILD SOMETHING <em>ICONIC</em></div>
+         <div className="footer-left">LET'S BUILD SOMETHING </div>
          <div className="footer-right">cameronbustamante2@gmail.com</div>
       </footer>
     </div>

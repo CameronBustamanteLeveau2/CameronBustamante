@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faVolumeHigh, faVolumeOff } from '@fortawesome/free-solid-svg-icons';
 import audio from './audio/Code_and_Cream.mp3';

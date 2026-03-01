@@ -21,9 +21,9 @@ import {
   faDatabase, 
   faCode, 
   faFire,
-  faPalette,   // Agregado
-  faMobileAlt, // Agregado
-  faTerminal   // Agregado
+  faPalette,   
+  faMobileAlt, 
+  faTerminal   
 } from '@fortawesome/free-solid-svg-icons';
 import Proyectope from './assets/proyecto1.jpg';
 import Proyectope2 from './assets/proyect2.jpg';
@@ -198,7 +198,7 @@ const projects = [
       { name: "CSS3", icon: faCss3Alt },
       { name: "JavaScript", icon: faJsSquare }
     ],
-    link: "#",
+    link: "https://litc-five.vercel.app/",
   },
   {
     title: "BikeLab",

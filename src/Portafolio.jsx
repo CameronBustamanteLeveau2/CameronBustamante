@@ -87,7 +87,7 @@ const Portafolio = () => {
             
             <header className="magazine-header">
               <div className="top-info">
-                <span className="brand-name">CAMERON BUSTAMANTE</span>
+                <p className="brand-name">CAMERON BUSTAMANTE</p>
               </div>
 
               <div className="main-title-container">
@@ -204,7 +204,7 @@ const Portafolio = () => {
   { name: "Terminal / Git", icon: faTerminal },
   { name: "Design / Figma", icon: faPalette },
 
-  // NUEVAS
+
   { name: "REST API Design", icon: faCode },
   { name: "GraphQL", icon: faDatabase },
   { name: "Authentication / JWT", icon: faCode },

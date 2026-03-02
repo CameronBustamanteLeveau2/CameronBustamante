@@ -68,7 +68,7 @@ const certificateVariants = {
 const Portafolio = () => {
   return (
     <div className="portfolio-wrapper">
-   <Swiper
+ <Swiper
   direction="horizontal"
   modules={[Mousewheel, Keyboard]}
   mousewheel={{
@@ -77,8 +77,6 @@ const Portafolio = () => {
     releaseOnEdges: true, 
   }}
   keyboard
-  noSwiping={true}
-  noSwipingSelector={".magazine-page-scroll"} 
   className="mySwiper"
 >
         <SwiperSlide>

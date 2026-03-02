@@ -850,3 +850,9 @@
 body{
   margin:0;
 }
+@media (max-width: 768px) {
+  .magazine-page.cover-hero {
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+}

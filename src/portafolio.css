@@ -202,17 +202,19 @@
   color: var(--text-primary);
   font-family: var(--sans);
   font-weight: 800;
-  font-size: 0.85rem;
+  font-size: 0.90rem;
   letter-spacing: 2px;
   padding: 12px 30px;
   border: 1px solid var(--text-primary);
   transition: all 0.4s ease;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 25px;
   background: transparent;
   cursor: pointer;
   text-transform: uppercase;
+  min-width: 140px; 
+  text-align: center;
 }
 
 .btn-modern-minimal:hover {
@@ -614,12 +616,7 @@
   background-color: #231d1d; 
   color:#e0e0e0;
 }
-.certs-grid-modern {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 3rem 2rem; 
-  margin-top: 4rem;
-}
+
 
 .cert-card-modern {
   position: relative;
@@ -855,4 +852,14 @@ body{
     height: auto;
     padding: 2rem 1.5rem;
   }
+}
+
+.certs-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+  gap: 3rem 2rem;
+  justify-items: center;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto; 
 }

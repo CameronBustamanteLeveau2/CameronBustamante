@@ -110,7 +110,7 @@ const Portafolio = () => {
                 <div className="hero-actions-editorial">
                   <DescargarCV />
                   <a href="https://github.com" className="btn-modern-minimal">
-                    <FontAwesomeIcon icon={faGithub} /> GITHUB
+                    <FontAwesomeIcon className="github" icon={faGithub} /> GITHUB
                   </a>
                 </div>
               </div>

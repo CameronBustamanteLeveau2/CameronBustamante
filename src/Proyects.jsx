@@ -13,7 +13,8 @@ import {
   faAngular, 
   faJava, 
   faShopify, 
-  faVuejs 
+  faVuejs,
+
 } from '@fortawesome/free-brands-svg-icons';
 
 import { 
@@ -39,11 +40,24 @@ import Proyectope11 from './assets/projecto11.png';
 import Proyectope12 from './assets/bikelab.png';
 import Proyecto13 from './assets/litc.png';
 import Proyecto14 from './assets/proyecto14.png';
+import Proyecto15 from './assets/proyecto15.png';
 
 const Proyects = () => {
   const [filter, setFilter] = useState("All");
 
 const projects = [
+  {
+  title: "Paletería 𓋛",
+  category: "Web Application",
+  description: "A modern web app designed to showcase and sell delicious ice lollies, featuring a clean interface, responsive design, and smooth user experience.",
+  image: Proyecto15,
+  techStack: [
+    { name: "TypeScript"},
+    { name: "Tailwind CSS" },
+    { name: "Next.js" }
+  ],
+  link: "https://paletas-kappa.vercel.app/",
+},
   {
     title: "Supermarket 🛒",
     category: "Web",

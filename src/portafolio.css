@@ -689,9 +689,7 @@
   transition: transform 0.3s ease;
 }
 
-.tech-item-editorial:hover {
-  transform: translateY(-3px);
-}
+
 
 .tech-label-caption {
   font-family: var(--sans);
